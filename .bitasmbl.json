@@ -1,0 +1,50 @@
+{
+  "projectName": "Client Portal",
+  "projectOverview": "Build a Blazor client portal with reusable Razor components, page routing, form handling, and structured client data views.",
+  "techStackId": 19,
+  "projectId": 401,
+  "requirements": [
+    {
+      "id": 904,
+      "header": "Define portal layout",
+      "description": "Create the main portal layout with navigation, dashboard page, and shared UI shell.",
+      "paths": [
+        "**/Components/Layout/**",
+        "**/Pages/**",
+        "**/Shared/**"
+      ]
+    },
+    {
+      "id": 905,
+      "header": "Build client views",
+      "description": "Build client list and client detail components using typed data models.",
+      "paths": [
+        "**/Components/Clients/**",
+        "**/Models/**",
+        "**/Pages/Clients/**"
+      ]
+    },
+    {
+      "id": 906,
+      "header": "Implement client form",
+      "description": "Implement a client creation form with validation and UI feedback.",
+      "paths": [
+        "**/Components/Forms/**",
+        "**/Pages/Clients/**"
+      ]
+    }
+  ],
+  "projectApplicationId": 77,
+  "currentWorkingProject": "https://github.com/he1snber8/Bitasmbl_bussin-nothin_b3f_77_64",
+  "domains": [
+    {
+      "name": "FrontEnd",
+      "tech": [
+        "Blazor"
+      ],
+      "initializedLocally": false,
+      "repo": "https://github.com/he1snber8/Bitasmbl_bussin-nothin_b3f_77_64",
+      "localPath": "/Users/lukakhaja/Bitasmbl_bussin-nothin_b3f_77_64"
+    }
+  ]
+}

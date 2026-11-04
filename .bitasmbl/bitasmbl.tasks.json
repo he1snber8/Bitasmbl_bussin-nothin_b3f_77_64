@@ -1,0 +1,29 @@
+{
+  "fileMappings": [
+    {
+      "file": "frontend/Components/Layout/ReconnectModal.razor",
+      "requirementId": 904,
+      "lastModified": "2026-11-04T18:17:44.920Z",
+      "activity": {
+        "editEvents": 3,
+        "activeDurationSec": 29,
+        "idleBreaks": 0,
+        "editIntervals": {
+          "averageSec": 9.666666666666666,
+          "medianSec": 14.5,
+          "rapidEdits": 0,
+          "pauses": 0,
+          "longPauses": 0
+        },
+        "diffStats": {
+          "linesAdded": 36,
+          "linesDeleted": 3
+        },
+        "sourceHints": {
+          "possiblePaste": false,
+          "suspiciousJump": false
+        }
+      }
+    }
+  ]
+}

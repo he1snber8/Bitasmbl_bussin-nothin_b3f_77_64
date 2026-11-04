@@ -1,0 +1,30 @@
+[
+  {
+    "file": "frontend/Components/Layout/ReconnectModal.razor",
+    "fileActivity": {
+      "editEvents": 2,
+      "activeDurationSec": 15,
+      "idleBreaks": 0,
+      "editIntervals": {
+        "averageSec": 7.5,
+        "medianSec": 15,
+        "rapidEdits": 0,
+        "pauses": 0,
+        "longPauses": 0
+      },
+      "diffStats": {
+        "linesAdded": 34,
+        "linesDeleted": 1
+      },
+      "sourceHints": {
+        "possiblePaste": false,
+        "suspiciousJump": false
+      }
+    },
+    "fileData": {
+      "blobSha": "e946af7dcb4babaccea856b70710015c0c3968cb",
+      "mode": "100644",
+      "type": "blob"
+    }
+  }
+]
