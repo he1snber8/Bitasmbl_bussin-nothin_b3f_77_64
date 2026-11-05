@@ -1,20 +1,20 @@
 [
   {
-    "file": "frontend/Components/Layout/ReconnectModal.razor",
+    "file": "frontend/Components/Layout/MainLayout.razor",
     "fileActivity": {
-      "editEvents": 14,
-      "activeDurationSec": 445,
-      "idleBreaks": 3,
+      "editEvents": 2,
+      "activeDurationSec": 52,
+      "idleBreaks": 0,
       "editIntervals": {
-        "averageSec": 3117.071428571428,
-        "medianSec": 81,
-        "rapidEdits": 4,
-        "pauses": 3,
-        "longPauses": 2
+        "averageSec": 26,
+        "medianSec": 52,
+        "rapidEdits": 0,
+        "pauses": 0,
+        "longPauses": 0
       },
       "diffStats": {
-        "linesAdded": 80,
-        "linesDeleted": 6
+        "linesAdded": 30,
+        "linesDeleted": 4
       },
       "sourceHints": {
         "possiblePaste": false,
@@ -22,7 +22,63 @@
       }
     },
     "fileData": {
-      "blobSha": "1cc341c97fe8be5f1436007b55a11c0982d9955b",
+      "blobSha": "30160b2c4056fe4cf6a4197a390e854f1fa0bb1e",
+      "mode": "100644",
+      "type": "blob"
+    }
+  },
+  {
+    "file": "frontend/Components/Layout/MainLayout.razor.css",
+    "fileActivity": {
+      "editEvents": 2,
+      "activeDurationSec": 44,
+      "idleBreaks": 0,
+      "editIntervals": {
+        "averageSec": 22,
+        "medianSec": 44,
+        "rapidEdits": 0,
+        "pauses": 0,
+        "longPauses": 0
+      },
+      "diffStats": {
+        "linesAdded": 106,
+        "linesDeleted": 2
+      },
+      "sourceHints": {
+        "possiblePaste": false,
+        "suspiciousJump": false
+      }
+    },
+    "fileData": {
+      "blobSha": "bad95ecd477b2027dc67819c8b45f71417713789",
+      "mode": "100644",
+      "type": "blob"
+    }
+  },
+  {
+    "file": "frontend/Components/Layout/NavMenu.razor.css",
+    "fileActivity": {
+      "editEvents": 4,
+      "activeDurationSec": 52,
+      "idleBreaks": 0,
+      "editIntervals": {
+        "averageSec": 13,
+        "medianSec": 13,
+        "rapidEdits": 1,
+        "pauses": 0,
+        "longPauses": 0
+      },
+      "diffStats": {
+        "linesAdded": 130,
+        "linesDeleted": 20
+      },
+      "sourceHints": {
+        "possiblePaste": false,
+        "suspiciousJump": false
+      }
+    },
+    "fileData": {
+      "blobSha": "75668f8e52e14037241abedfa2228d11f58e30cd",
       "mode": "100644",
       "type": "blob"
     }
