@@ -1,20 +1,23 @@
 [
   {
-    "file": "frontend/Components/Layout/ReconnectModal.razor",
+    "file": "frontend/Components/Layout/MainLayout.razor",
+    "requirementId": 904,
+    "projectApplicationId": 77,
+    "projectApplicationLinkedRepoId": 64,
     "fileActivity": {
-      "editEvents": 14,
-      "activeDurationSec": 445,
-      "idleBreaks": 3,
+      "editEvents": 9,
+      "activeDurationSec": 89,
+      "idleBreaks": 2,
       "editIntervals": {
-        "averageSec": 3117.071428571428,
-        "medianSec": 81,
+        "averageSec": 446,
+        "medianSec": 16,
         "rapidEdits": 4,
-        "pauses": 3,
+        "pauses": 2,
         "longPauses": 2
       },
       "diffStats": {
-        "linesAdded": 80,
-        "linesDeleted": 6
+        "linesAdded": 36,
+        "linesDeleted": 9
       },
       "sourceHints": {
         "possiblePaste": false,
@@ -22,7 +25,7 @@
       }
     },
     "fileData": {
-      "blobSha": "1cc341c97fe8be5f1436007b55a11c0982d9955b",
+      "blobSha": "f7f307a27c3f35a5067de6913c20552ea7253990",
       "mode": "100644",
       "type": "blob"
     }
