@@ -1,20 +1,29 @@
 [
   {
+    "file": "frontend/Components/Layout/NavMenu.razor.css",
+    "fileActivity": {},
+    "fileData": {
+      "blobSha": "7c5b4327ceb1f035770aafdab4c8e8e2ea071116",
+      "mode": "100644",
+      "type": "blob"
+    }
+  },
+  {
     "file": "frontend/Components/Layout/ReconnectModal.razor",
     "fileActivity": {
-      "editEvents": 14,
-      "activeDurationSec": 445,
-      "idleBreaks": 3,
+      "editEvents": 3,
+      "activeDurationSec": 62,
+      "idleBreaks": 0,
       "editIntervals": {
-        "averageSec": 3117.071428571428,
-        "medianSec": 81,
-        "rapidEdits": 4,
-        "pauses": 3,
-        "longPauses": 2
+        "averageSec": 20.666666666666664,
+        "medianSec": 50.5,
+        "rapidEdits": 0,
+        "pauses": 0,
+        "longPauses": 0
       },
       "diffStats": {
-        "linesAdded": 80,
-        "linesDeleted": 6
+        "linesAdded": 50,
+        "linesDeleted": 2
       },
       "sourceHints": {
         "possiblePaste": false,
@@ -22,7 +31,7 @@
       }
     },
     "fileData": {
-      "blobSha": "1cc341c97fe8be5f1436007b55a11c0982d9955b",
+      "blobSha": "36c61b64e784c3c42c7fb7534f599cfdb23c0240",
       "mode": "100644",
       "type": "blob"
     }
