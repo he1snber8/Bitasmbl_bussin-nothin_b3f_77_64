@@ -1,19 +1,47 @@
 [
   {
-    "file": "frontend/Components/Layout/ReconnectModal.razor",
+    "file": "frontend/Components/Layout/NavMenu.razor.css",
     "fileActivity": {
-      "editEvents": 14,
-      "activeDurationSec": 445,
-      "idleBreaks": 3,
+      "editEvents": 1,
+      "activeDurationSec": 0,
+      "idleBreaks": 0,
       "editIntervals": {
-        "averageSec": 3117.071428571428,
-        "medianSec": 81,
-        "rapidEdits": 4,
-        "pauses": 3,
-        "longPauses": 2
+        "averageSec": 0,
+        "medianSec": 0,
+        "rapidEdits": 0,
+        "pauses": 0,
+        "longPauses": 0
       },
       "diffStats": {
-        "linesAdded": 80,
+        "linesAdded": 108,
+        "linesDeleted": 0
+      },
+      "sourceHints": {
+        "possiblePaste": false,
+        "suspiciousJump": false
+      }
+    },
+    "fileData": {
+      "blobSha": "7c5b4327ceb1f035770aafdab4c8e8e2ea071116",
+      "mode": "100644",
+      "type": "blob"
+    }
+  },
+  {
+    "file": "frontend/Components/Layout/ReconnectModal.razor",
+    "fileActivity": {
+      "editEvents": 19,
+      "activeDurationSec": 500,
+      "idleBreaks": 5,
+      "editIntervals": {
+        "averageSec": 2456.3157894736837,
+        "medianSec": 71.5,
+        "rapidEdits": 4,
+        "pauses": 5,
+        "longPauses": 4
+      },
+      "diffStats": {
+        "linesAdded": 85,
         "linesDeleted": 6
       },
       "sourceHints": {
@@ -22,7 +50,7 @@
       }
     },
     "fileData": {
-      "blobSha": "1cc341c97fe8be5f1436007b55a11c0982d9955b",
+      "blobSha": "7f1648139f70c7e1740e93e348d63d87c12bde0d",
       "mode": "100644",
       "type": "blob"
     }
