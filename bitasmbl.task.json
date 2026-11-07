@@ -1,30 +1,37 @@
-[
-  {
-    "file": "frontend/Components/Layout/ReconnectModal.razor",
-    "fileActivity": {
-      "editEvents": 14,
-      "activeDurationSec": 445,
-      "idleBreaks": 3,
-      "editIntervals": {
-        "averageSec": 3117.071428571428,
-        "medianSec": 81,
-        "rapidEdits": 4,
-        "pauses": 3,
-        "longPauses": 2
+{
+  "branch": "bitasmbl/evaluations/192ed372-7392-49b9-85f9-78b7767dca0f-07/11/2026-904-2/3",
+  "requirementId": 904,
+  "projectApplicationId": 77,
+  "projectApplicationLinkedRepoId": 64,
+  "files": [
+    {
+      "file": "frontend/Components/Layout/meow3.css",
+      "fileActivity": {
+        "editEvents": 2,
+        "activeDurationSec": 0,
+        "idleBreaks": 1,
+        "editIntervals": {
+          "averageSec": 1407.5,
+          "medianSec": 2815,
+          "rapidEdits": 0,
+          "pauses": 1,
+          "longPauses": 1
+        },
+        "diffStats": {
+          "linesAdded": 18,
+          "linesDeleted": 1
+        },
+        "sourceHints": {
+          "possiblePaste": false,
+          "suspiciousJump": false
+        }
       },
-      "diffStats": {
-        "linesAdded": 80,
-        "linesDeleted": 6
-      },
-      "sourceHints": {
-        "possiblePaste": false,
-        "suspiciousJump": false
+      "fileData": {
+        "blobSha": "215eec1016715387a5fdd428ab82f2eb4df30e4d",
+        "commitSha": "9f42c5d795881886889b88ad941cc2943a9b438f",
+        "mode": "100644",
+        "type": "blob"
       }
-    },
-    "fileData": {
-      "blobSha": "1cc341c97fe8be5f1436007b55a11c0982d9955b",
-      "mode": "100644",
-      "type": "blob"
     }
-  }
-]
+  ]
+}
