@@ -120,7 +120,7 @@ jobs:
           PROJECT_APPLICATION_ID=$(jq -r '.projectApplicationId' bitasmbl.task.json)
           REQUIREMENT_ID=$(jq -r '.requirementId' bitasmbl.task.json)
           BRANCH=$(jq -r '.branch' bitasmbl.task.json)
-          COMMIT_SHA=$(jq -r '.commitSha' bitasmbl.task.json)
+
 
           FILES=$(jq -c '.files' bitasmbl.task.json)
 
@@ -128,7 +128,7 @@ jobs:
           echo "project_application_id=$PROJECT_APPLICATION_ID" >> $GITHUB_OUTPUT
           echo "requirement_id=$REQUIREMENT_ID" >> $GITHUB_OUTPUT
           echo "branch=$BRANCH" >> $GITHUB_OUTPUT
-          echo "commit_sha=$COMMIT_SHA" >> $GITHUB_OUTPUT
+
 
           echo "files<<EOF" >> $GITHUB_OUTPUT
           echo "$FILES" >> $GITHUB_OUTPUT
@@ -141,7 +141,7 @@ jobs:
           PROJECT_APPLICATION_ID: ${{ steps.meta.outputs.project_application_id }}
           REQUIREMENT_ID: ${{ steps.meta.outputs.requirement_id }}
           BRANCH: ${{ steps.meta.outputs.branch }}
-          COMMIT_SHA: ${{ steps.meta.outputs.commit_sha }}
+          COMMIT_SHA: ${{ github.sha }}
           FILES: ${{ steps.meta.outputs.files }}
           REPO: ${{ github.repository }}
           BITASMBL_TOKEN: ${{ secrets.BITASMBL_TOKEN }}
