@@ -1,10 +1,11 @@
-
 name: Bitasmbl Validation
+
 on:
   push:
     branches:
       - main
       - 'bitasmbl/evaluations/**'
+
 jobs:
   scaffold:
     if: github.event.head_commit.message == 'bitasmbl:init'
@@ -12,12 +13,15 @@ jobs:
     environment: BITASMBL_ENV
     permissions:
       contents: write
+
     steps:
       - uses: actions/checkout@v3
+
       - name: Scaffold Tech
         shell: bash
         run: |
-           dotnet new blazor -n frontend --no-restore
+          dotnet new blazor -n frontend --no-restore
+
       - name: Commit scaffold
         run: |
           git config user.name "${{ github.actor }}"
@@ -30,6 +34,7 @@ jobs:
           else
             echo "No changes to commit"
           fi
+
       - name: Extract metadata from temp.json
         id: meta
         run: |
@@ -40,11 +45,12 @@ jobs:
           echo "project_application_linked_repo_id=$PROJECT_APPLICATION_LINKED_REPO_ID" >> $GITHUB_OUTPUT
           echo "project_application_id=$PROJECT_APPLICATION_ID" >> $GITHUB_OUTPUT
           echo "owner_id=$OWNER_ID" >> $GITHUB_OUTPUT
+
       - name: Send repo set up completion notification
         run: |
           RESPONSE=$(curl -s \
             -w "\n%{http_code}" \
-            -X PUT https://5389-176-221-143-53.ngrok-free.app/projects/application-repo-init-complete \
+            -X PUT https://3007-176-221-143-53.ngrok-free.app/projects/application-repo-init-complete \
             -H "Content-Type: application/json" \
             -d @- <<EOF
           {
@@ -66,16 +72,18 @@ jobs:
           fi
 
   prepare-project-units-evaluation:
-    # if: github.event.head_commit.message != 'bitasmbl:token-check' && github.event.head_commit.message != 'bitasmbl:remove-token-check'
     if: github.event.head_commit.message != 'bitasmbl:init'
     environment: BITASMBL_ENV
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 2
+
       - name: Start project token verification
         run: echo "Running Bitasmbl validation..."
+
       - name: Verify Token Existence
         run: |
           if [ -z "${{ secrets.BITASMBL_TOKEN }}" ]; then
@@ -83,13 +91,14 @@ jobs:
           else
             echo "TOKEN IS SET"
           fi
+
       - name: Check token validity
         run: |
           RESPONSE=$(curl -s \
             -w "\n%{http_code}" \
-            -X POST https://5389-176-221-143-53.ngrok-free.app/users/check-token-validity \
+            -X POST https://3007-176-221-143-53.ngrok-free.app/users/check-token-validity \
             -H "Content-Type: application/json" \
-            -H "Authorization: Bearer ${{ secrets.BITASMBL_TOKEN }}"\
+            -H "Authorization: Bearer ${{ secrets.BITASMBL_TOKEN }}"
           )
 
           BODY=$(echo "$RESPONSE" | sed '$d')
@@ -102,8 +111,9 @@ jobs:
             echo "::error::$BODY"
             exit 1
           fi
+
       - name: Extract metadata from bitasmbl.task.json
-        if: github.event.head_commit.message != 'bitasmbl:token-check' && github.event.head_commit.message != 'bitasmbl:remove-token-check' 
+        if: github.event.head_commit.message != 'bitasmbl:token-check' && github.event.head_commit.message != 'bitasmbl:remove-token-check'
         id: meta
         run: |
           PROJECT_APPLICATION_LINKED_REPO_ID=$(jq -r '.projectApplicationLinkedRepoId' bitasmbl.task.json)
@@ -111,8 +121,8 @@ jobs:
           REQUIREMENT_ID=$(jq -r '.requirementId' bitasmbl.task.json)
           BRANCH=$(jq -r '.branch' bitasmbl.task.json)
           COMMIT_SHA=$(jq -r '.commitSha' bitasmbl.task.json)
-          
-          ACTIVITY_DATA=$(jq -c '.activityMeta' bitasmbl.task.json)
+
+          FILES=$(jq -c '.files' bitasmbl.task.json)
 
           echo "project_application_linked_repo_id=$PROJECT_APPLICATION_LINKED_REPO_ID" >> $GITHUB_OUTPUT
           echo "project_application_id=$PROJECT_APPLICATION_ID" >> $GITHUB_OUTPUT
@@ -120,23 +130,23 @@ jobs:
           echo "branch=$BRANCH" >> $GITHUB_OUTPUT
           echo "commit_sha=$COMMIT_SHA" >> $GITHUB_OUTPUT
 
-          echo "activity_data<<EOF" >> $GITHUB_OUTPUT
-          echo "$ACTIVITY_DATA" >> $GITHUB_OUTPUT
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo "$FILES" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
+
       - name: Send to backend
-        if: github.event.head_commit.message != 'bitasmbl:token-check' && github.event.head_commit.message != 'bitasmbl:remove-token-check' 
+        if: github.event.head_commit.message != 'bitasmbl:token-check' && github.event.head_commit.message != 'bitasmbl:remove-token-check'
         env:
           PROJECT_APPLICATION_LINKED_REPO_ID: ${{ steps.meta.outputs.project_application_linked_repo_id }}
           PROJECT_APPLICATION_ID: ${{ steps.meta.outputs.project_application_id }}
           REQUIREMENT_ID: ${{ steps.meta.outputs.requirement_id }}
           BRANCH: ${{ steps.meta.outputs.branch }}
           COMMIT_SHA: ${{ steps.meta.outputs.commit_sha }}
-
-          ACTIVITY_META: ${{ steps.meta.outputs.activity_data }}
+          FILES: ${{ steps.meta.outputs.files }}
           REPO: ${{ github.repository }}
-          BASE_SHA: ${{ github.event.before }}
           BITASMBL_TOKEN: ${{ secrets.BITASMBL_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
+
         run: |
           PAYLOAD=$(jq -n \
             --arg projectApplicationLinkedRepoId "$PROJECT_APPLICATION_LINKED_REPO_ID" \
@@ -145,8 +155,7 @@ jobs:
             --arg repo "$REPO" \
             --arg branch "$BRANCH" \
             --arg commitSha "$COMMIT_SHA" \
-            --arg diffs "$(git diff HEAD^ HEAD)" \
-            --arg activityMeta "$ACTIVITY_META" \
+            --arg files "$FILES" \
             --arg githubAccessToken "$GITHUB_TOKEN" \
             '{
               projectApplicationLinkedRepoId: ($projectApplicationLinkedRepoId | tonumber),
@@ -155,15 +164,14 @@ jobs:
               repo: $repo,
               branch: $branch,
               commitSha: $commitSha,
-              diffs: $diffs,
-              activityMeta: ($activityMeta | fromjson),
+              files: ($files | fromjson),
               githubAccessToken: $githubAccessToken
             }'
           )
-          
+
           RESPONSE=$(curl -s \
             -w "\n%{http_code}" \
-            -X POST "https://5389-176-221-143-53.ngrok-free.app/projects/evaluate-project-units" \
+            -X POST "https://3007-176-221-143-53.ngrok-free.app/projects/evaluate-project-units-new" \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer $BITASMBL_TOKEN" \
             -d "$PAYLOAD")
@@ -177,4 +185,3 @@ jobs:
             echo "::error::$BODY"
             exit 1
           fi
-          
