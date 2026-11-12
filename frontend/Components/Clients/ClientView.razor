@@ -1,0 +1,75 @@
+@page "/clients"
+
+<h3>Clients</h3>
+
+<div class="row">
+    <div class="col-md-5">
+        <h5>Client List</h5>
+
+        @foreach (var client in Clients)
+        {
+            <div class="card p-2 mb-2"
+                 @onclick="() => SelectClient(client)"
+                 style="cursor: pointer;">
+                <strong>@client.Name</strong>
+                <small>@client.Email</small>
+            </div>
+        }
+    </div>
+
+    <div class="col-md-7">
+        <h5>Client Details</h5>
+
+        @if (SelectedClient is not null)
+        {
+            <div class="card p-3">
+                <h4>@SelectedClient.Name</h4>
+                <p>Email: @SelectedClient.Email</p>
+                <p>Company: @SelectedClient.Company</p>
+                <p>Phone: @SelectedClient.Phone</p>
+            </div>
+        }
+        else
+        {
+            <p>Select a client to view their details.</p>
+        }
+    </div>
+</div>
+
+@code {
+    public class Client
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = "";
+        public string Email { get; set; } = "";
+        public string Company { get; set; } = "";
+        public string Phone { get; set; } = "";
+    }
+
+    private List<Client> Clients = new()
+    {
+        new() { Id = 1, Name = "John Smith", Email = "john@example.com", Company = "Acme Inc.", Phone = "+123456789" },
+        new() { Id = 2, Name = "Jane Doe", Email = "jane@example.com", Company = "Tech Solutions", Phone = "+987654321" },
+        new() { Id = 3, Name = "Mike Brown", Email = "mike@example.com", Company = "Global Systems", Phone = "+112233445" }
+    };
+
+    private Client? SelectedClient;
+
+    private void SelectClient(Client client)
+    {
+        SelectedClient = client;
+    }
+
+
+    private void SelectClient2(Client client)
+    {
+        SelectedClient = client;
+    }
+
+    private void SelectClient3(Client client)
+    {
+        SelectedClient = client;
+    }
+
+
+}
