@@ -1,30 +1,64 @@
-[
-  {
-    "file": "frontend/Components/Layout/ReconnectModal.razor",
-    "fileActivity": {
-      "editEvents": 14,
-      "activeDurationSec": 445,
-      "idleBreaks": 3,
-      "editIntervals": {
-        "averageSec": 3117.071428571428,
-        "medianSec": 81,
-        "rapidEdits": 4,
-        "pauses": 3,
-        "longPauses": 2
+{
+  "branch": "bitasmbl/evaluations/7a473a80-94ab-4a70-8555-44bcaac4843f-13/11/2026-906-3/3",
+  "requirementId": 906,
+  "projectApplicationId": 77,
+  "projectApplicationLinkedRepoId": 64,
+  "files": [
+    {
+      "file": "frontend/Components/Forms/CreateClient.razor",
+      "fileActivity": {
+        "editEvents": 3,
+        "activeDurationSec": 61,
+        "idleBreaks": 0,
+        "editIntervals": {
+          "averageSec": 20.333333333333332,
+          "medianSec": 30.5,
+          "rapidEdits": 0,
+          "pauses": 0,
+          "longPauses": 0
+        },
+        "diffStats": {
+          "linesAdded": 98,
+          "linesDeleted": 5
+        },
+        "sourceHints": {
+          "possiblePaste": false,
+          "suspiciousJump": false
+        }
       },
-      "diffStats": {
-        "linesAdded": 80,
-        "linesDeleted": 6
-      },
-      "sourceHints": {
-        "possiblePaste": false,
-        "suspiciousJump": false
+      "fileData": {
+        "blobSha": "e060f1c715d1d7a59648d13c03f9b960f1383ac8",
+        "mode": "100644",
+        "type": "blob"
       }
     },
-    "fileData": {
-      "blobSha": "1cc341c97fe8be5f1436007b55a11c0982d9955b",
-      "mode": "100644",
-      "type": "blob"
+    {
+      "file": "frontend/Models/ClientModel.cs",
+      "fileActivity": {
+        "editEvents": 8,
+        "activeDurationSec": 154,
+        "idleBreaks": 2,
+        "editIntervals": {
+          "averageSec": 195.5,
+          "medianSec": 77,
+          "rapidEdits": 3,
+          "pauses": 2,
+          "longPauses": 1
+        },
+        "diffStats": {
+          "linesAdded": 27,
+          "linesDeleted": 13
+        },
+        "sourceHints": {
+          "possiblePaste": false,
+          "suspiciousJump": false
+        }
+      },
+      "fileData": {
+        "blobSha": "88b1038fc0d84e33f7b05253a832ac4b3e8acc32",
+        "mode": "100644",
+        "type": "blob"
+      }
     }
-  }
-]
+  ]
+}
