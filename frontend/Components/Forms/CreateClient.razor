@@ -1,0 +1,92 @@
+@page "/clients/create"
+
+<h3>Create New Client</h3>
+<p class="text-muted">Enter the client information below.</p>
+
+<EditForm Model="@client" OnValidSubmit="CreateClient">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <InputText class="form-control"
+                   @bind-Value="client.Name"
+                   @bind-Value:after="ClearFeedback" />
+        <ValidationMessage For="@(() => client.Name)" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email Addresso</label>
+        <InputText class="form-control"
+                   @bind-Value="client.Email"
+                   @bind-Value:after="ClearFeedback" />
+        <ValidationMessage For="@(() => client.Email)" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Company</label>
+        <InputText class="form-control"
+                   @bind-Value="client.Company"
+                   @bind-Value:after="ClearFeedback" />
+    </div>
+
+    <div class="mt-3">
+        <button type="submit"
+                class="btn btn-primary"
+                disabled="@isSubmitting">
+            @(isSubmitting ? "Creating..." : "Create Client")
+        </button>
+
+        <button type="button"
+                class="btn btn-secondary ms-2"
+                @onclick="ResetForm"
+                disabled="@isSubmitting">
+            Cancel
+        </button>
+    </div>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(feedbackMessage))
+{
+    <div class="alert alert-success mt-3">
+        @feedbackMessage
+    </div>
+}
+@* Nokia *@
+@code {
+    private ClientModel client = new ClientModel ();
+    private bool isSubmitting;
+    private string? feedbackMessage;
+
+    private async Task CreateClient()
+    {
+        isSubmitting = true;
+        feedbackMessage = null;
+
+        try
+        {
+
+            await Task.Delay(500);
+
+            feedbackMessage = $"Client {client.Name} created successfully!";
+            client = new ClientModel();
+        }
+        finally
+        {
+            isSubmitting = false;
+        }
+    }
+
+    private void ClearFeedback()
+    {
+        feedbackMessage = null;
+    }
+
+    private void ResetForm()
+    {
+        client = new ClientModel();
+        feedbackMessage = null;
+    }
+
+
+}
