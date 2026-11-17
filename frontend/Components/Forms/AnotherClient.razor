@@ -1,0 +1,69 @@
+@page "/client-form"
+@using System.ComponentModel.DataAnnotations
+
+<h3>Client Registration</h3>
+
+<EditForm Model="@client" OnValidSubmit="@HandleSubmit">
+    <DataAnnotationsValidator />
+
+    <div class="mb-3">
+        <label>Full Name</label>
+        <InputText @bind-Value="client.FullName" class="form-control" />
+        <ValidationMessage For="@(() => client.FullName)" />
+    </div>
+
+    <div class="mb-3">
+        <label>Email</label>
+        <InputText @bind-Value="client.Email" class="form-control" />
+        <ValidationMessage For="@(() => client.Email)" />
+    </div>
+
+    <div class="mb-3">
+        <label>Phone Number</label>
+        <InputText @bind-Value="client.PhoneNumber" class="form-control" />
+        <ValidationMessage For="@(() => client.PhoneNumber)" />
+    </div>
+
+    <div class="mb-3">
+        <label>Company</label>
+        <InputText @bind-Value="client.Company" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Register Client
+    </button>
+</EditForm>
+
+@if (submitted)
+{
+    <p class="text-success mt-3">
+        Client registered successfully!
+    </p>
+}
+
+@code {
+    private ClientModel client = new();
+    private bool submitted;
+
+    private void HandleSubmit()
+    {
+        submitted = true;
+    }
+
+    public class ClientModel
+    {
+        [Required(ErrorMessage = "Full name is required.")]
+        [StringLength(100, MinimumLength = 2)]
+        public string FullName { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Enter a valid email address.")]
+        public string Email { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Phone number is required.")]
+        [Phone(ErrorMessage = "Enter a valid phone number.")]
+        public string PhoneNumber { get; set; } = string.Empty;
+
+        public string? Company { get; set; }
+    }
+}
