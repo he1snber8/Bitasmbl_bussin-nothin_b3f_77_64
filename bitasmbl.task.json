@@ -1,30 +1,36 @@
-[
-  {
-    "file": "frontend/Components/Layout/ReconnectModal.razor",
-    "fileActivity": {
-      "editEvents": 14,
-      "activeDurationSec": 445,
-      "idleBreaks": 3,
-      "editIntervals": {
-        "averageSec": 3117.071428571428,
-        "medianSec": 81,
-        "rapidEdits": 4,
-        "pauses": 3,
-        "longPauses": 2
+{
+  "branch": "bitasmbl/evaluations/86efb307-630c-43d9-ba51-61128c3f2c55-19/11/2026-905-12/3",
+  "requirementId": 905,
+  "projectApplicationId": 77,
+  "projectApplicationLinkedRepoId": 64,
+  "files": [
+    {
+      "file": "frontend/Models/ClientModel.cs",
+      "fileActivity": {
+        "editEvents": 18,
+        "activeDurationSec": 342,
+        "idleBreaks": 9,
+        "editIntervals": {
+          "averageSec": 29238.833333333332,
+          "medianSec": 42217,
+          "rapidEdits": 4,
+          "pauses": 9,
+          "longPauses": 8
+        },
+        "diffStats": {
+          "linesAdded": 60,
+          "linesDeleted": 19
+        },
+        "sourceHints": {
+          "possiblePaste": false,
+          "suspiciousJump": false
+        }
       },
-      "diffStats": {
-        "linesAdded": 80,
-        "linesDeleted": 6
-      },
-      "sourceHints": {
-        "possiblePaste": false,
-        "suspiciousJump": false
+      "fileData": {
+        "blobSha": "95cd7eb9828c5aacb29ba33e4ddbdfd72ba1d807",
+        "mode": "100644",
+        "type": "blob"
       }
-    },
-    "fileData": {
-      "blobSha": "1cc341c97fe8be5f1436007b55a11c0982d9955b",
-      "mode": "100644",
-      "type": "blob"
     }
-  }
-]
+  ]
+}
